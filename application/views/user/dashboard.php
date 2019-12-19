@@ -32,8 +32,6 @@
                 MAHASISWA
               </a>
               <a href="" class="list-group-item"><i class="fa fa-home"></i> Home</a>
-              <a href="" class="list-group-item"><i class="fa fa-user"></i> Profil</a>
-              <a href="" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a>
             </div>
         </div>
         <div class="col-md-9">

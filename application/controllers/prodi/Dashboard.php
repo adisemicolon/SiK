@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         //load model admin
         $this->load->model('admin');
+        $this->load->model('modelprodi');
         //cek session dan level user
         if($this->admin->is_role() != "prodi"){
             redirect("login/");
@@ -16,8 +17,15 @@ class Dashboard extends CI_Controller {
 
     public function index()
     {
-
-        $this->load->view("prodi/dashboard");            
+        
+  $data['title'] = "Join CodeIgniter"; 
+  // query memanggil function duatable di model
+  $where = array(
+    //   '' => '',
+  );
+  $data['join3'] = $this->modelprodi->tigatable($where); 
+//   print_r($data);
+        $this->load->view("prodi/dashboard",$data);            
 
     }
 

@@ -33,12 +33,6 @@
                 PENGAJARAN
               </a>
               <a href="" class="list-group-item"><i class="fa fa-home"></i> Home</a>
-              <a href="" class="list-group-item"><i class="fa fa-user"></i> Profil</a>
-              <a href="" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a>
-              <!-- <a href="#" class="list-group-item"><i class="fa fa-book"></i> Blog</a>
-              <a href="#" class="list-group-item"><i class="fa fa-folder"></i> Kategori</a>
-              <a href="#" class="list-group-item"><i class="fa fa-comments-o"></i> Komentar</a>
-              <a href="logout.php" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a> -->
             </div>
         </div>
         <div class="col-md-9">
@@ -57,27 +51,24 @@
                       <th scope="col">Kelas</th>
                       <th scope="col">Dosen</th>
                       <th scope="col">Pertemuan</th>
+                        <th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php 
+                    $no=1; 
+                    foreach ($join3 as $row) { ?>
                     <tr>
-                      <th scope="row">1</th>
-                      <th>165410029</th>
-                      <td>Naruto</td>
-                      <td>FDE556</td>
-                      <td>TI-1</td>
-                      <td>Bambang Pdp</td>
-                      <td>Pertama</td>
+                      <td><?php echo $no++;?></td>
+                      <td><?php echo $row->nim;?></td>
+                      <td><?php echo $row->nama;?></td>
+                      <td><?php echo $row->kd_matkul;?></td>
+                      <td><?php echo $row->kelas;?></td>
+                      <td><?php echo $row->nama_dosen;?></td>
+                      <td><?php echo $row->pertemuan_matkul;?></td>
+                      <td><?php echo $row->status;?></td>
                     </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <th>165410029</th>
-                      <td>Naruto</td>
-                      <td>FDE556</td>
-                      <td>TI-1</td>
-                      <td>Bambang Pdp</td>
-                      <td>Pertama</td>
-                    </tr>
+                  <?php } ?>
                   </tbody>
                 </table>
               </div>

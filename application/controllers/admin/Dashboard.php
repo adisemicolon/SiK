@@ -16,8 +16,11 @@ class Dashboard extends CI_Controller {
 
     public function index()
     {
-
-        $this->load->view("admin/dashboard");       
+        $query = $this->db->query("SELECT * FROM mahasiswa join matakuliah ON mahasiswa.id_mahasiswa=matakuliah.id_matakuliah join kompensasi ON matakuliah.id_matakuliah = kompensasi.id_kompensasi join dosen ON kompensasi.id_dosen = dosen.id_dosen")->result();
+        $data['title'] = "Join CodeIgniter"; 
+        $data['join3'] = $query;
+        
+       $this->load->view("admin/dashboard",$data);       
 
     }
 
@@ -26,5 +29,7 @@ class Dashboard extends CI_Controller {
         $this->session->sess_destroy();
         redirect('login');
     }
+
+   
 
 }

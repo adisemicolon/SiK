@@ -30,18 +30,12 @@
         <div class="col-md-3">
             <div class="list-group">
               <a href="#" class="list-group-item active" style="text-align: center;background-color: black;border-color: black">
-                PRODI
+                PENGAJARAN
               </a>
               <a href="" class="list-group-item"><i class="fa fa-home"></i> Home</a>
-              <a href="" class="list-group-item"><i class="fa fa-user"></i> Profil</a>
-              <a href="" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a>
-              <!-- <a href="#" class="list-group-item"><i class="fa fa-book"></i> Blog</a>
-              <a href="#" class="list-group-item"><i class="fa fa-folder"></i> Kategori</a>
-              <a href="#" class="list-group-item"><i class="fa fa-comments-o"></i> Komentar</a>
-              <a href="logout.php" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a> -->
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="panel panel-default">
               <div class="panel-heading">
                 Selamat Datang <b><?php echo $this->session->userdata("user_nama") ?></b>
@@ -57,36 +51,55 @@
                       <th scope="col">Kelas</th>
                       <th scope="col">Dosen</th>
                       <th scope="col">Pertemuan</th>
-                      <th scope="col">Tahun Akademik</th>
-                      <th scope="col">Semester</th>
-                      <th scope="col">Action</th>
+                      <th scope="col">Status</th>
+                       <th scope="col">Semester</th>
+                       <th scope="col">Gambar</th>
+                        <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                 <!--  <?php 
+                    $no=1; 
+                    foreach ($join3 as $row) { ?>
                     <tr>
-                      <th scope="row">1</th>
-                      <th>165410029</th>
-                      <td>Naruto</td>
-                      <td>FDE556</td>
-                      <td>TI-1</td>
-                      <td>Bambang Pdp</td>
-                      <td>Pertama</td>
-                      <td>2019-12-11</td>
-                      <td>Ganjil</td>
-                      <td><span class="label label-success">Accept</span></td>
+                      <td><?php echo $no++;?></td>
+                      <td><?php echo $row->nim;?></td>
+                      <td><?php echo $row->nama;?></td>
+                      <td><?php echo $row->kd_matkul;?></td>
+                      <td><?php echo $row->kelas;?></td>
+                      <td><?php echo $row->nama_dosen;?></td>
+                      <td><?php echo $row->pertemuan_matkul;?></td>
+                      <td><?php echo $row->status;?></td>
                     </tr>
+                  <?php } ?> -->
+                  <?php 
+                    $no=1; 
+                    foreach ($join3 as $row) { ?>
                     <tr>
-                      <th scope="row">1</th>
-                      <th>165410029</th>
-                      <td>Naruto</td>
-                      <td>FDE556</td>
-                      <td>TI-1</td>
-                      <td>Bambang Pdp</td>
-                      <td>Pertama</td>
-                      <td>2019-12-11</td>
-                      <td>Ganjil</td>
-                      <td><span class="label label-danger">Reject</span></td>
+                      <td><?php echo $no++;?></td>
+                      <td><?php echo $row->nim;?></td>
+                      <td><?php echo $row->nama;?></td>
+                      <td><?php echo $row->kd_matkul;?></td>
+                      <td><?php echo $row->kelas;?></td>
+                      <td><?php echo $row->nama_dosen;?></td>
+                      <td><?php echo $row->pertemuan_matkul;?></td>
+                      <td><?php echo $row->thn_akademik;?></td>
+                      <td><?php echo $row->semester;?></td>
+                      <td>  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Lihat</button>
+                        <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                                  <img src="<?= base_url('images/').$row->gambar;?>"/>
+                        </div>
+                      </div>
+                      </td>
+
+                      <td>
+                          <button type="button" class="btn btn-primary">Terima</button>
+                          <button type="button" class="btn btn-danger">Tolak</button>
+                      </td>
+
                     </tr>
+                  <?php } ?>
                   </tbody>
                 </table>
               </div>
